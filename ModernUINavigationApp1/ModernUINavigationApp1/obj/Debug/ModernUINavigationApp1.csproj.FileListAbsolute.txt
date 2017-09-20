@@ -39,3 +39,5 @@ C:\Users\Administrator\Documents\Visual Studio 2012\Projects\ModernUINavigationA
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\ModernUINavigationApp1\ModernUINavigationApp1\obj\Debug\ModernUINavigationApp1.g.resources
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\ModernUINavigationApp1\ModernUINavigationApp1\obj\Debug\ModernUINavigationApp1.exe
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\ModernUINavigationApp1\ModernUINavigationApp1\obj\Debug\ModernUINavigationApp1.pdb
+C:\absa\2\appmt\ModernUINavigationApp1\ModernUINavigationApp1\obj\Debug\ModernUINavigationApp1.exe
+C:\absa\2\appmt\ModernUINavigationApp1\ModernUINavigationApp1\obj\Debug\ModernUINavigationApp1.pdb
