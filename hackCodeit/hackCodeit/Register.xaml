@@ -1,0 +1,38 @@
+﻿<Page x:Class="hackCodeit.Register"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="200" d:DesignWidth="300"
+	Title="Register">
+    <Border BorderBrush="#FF000000" 
+
+            BorderThickness="0.5,0.5,1.5,1.5" 
+            CornerRadius="4,4,4,4" Padding="8,8,8,8">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="25*"/>
+                <ColumnDefinition Width="200*"/>
+                <ColumnDefinition Width="57*"/>
+            </Grid.ColumnDefinitions>
+            <Button Content="Register" HorizontalAlignment="Left" Margin="96.2,154,0,0" VerticalAlignment="Top" Width="161" Grid.ColumnSpan="2" Click="Button_Click_1" Grid.Column="1"/>
+            <TextBlock HorizontalAlignment="Left" Margin="9,39,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+            <TextBlock HorizontalAlignment="Left" Margin="10,71,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+            <TextBox HorizontalAlignment="Left" Name="userText"
+                 Height="23" Margin="96.2,39,-0.4,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="161" Grid.ColumnSpan="2" Grid.Column="1"/>
+            <TextBox HorizontalAlignment="Left" Name="pass1Text"
+                 Height="23" Margin="96.2,70,-0.4,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="161" Grid.ColumnSpan="2" Grid.Column="1"/>
+            <TextBox HorizontalAlignment="Left" Name="pass2Text"
+                 Height="23" Margin="96.2,106,-0.4,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="161" Grid.ColumnSpan="2" Grid.Column="1"/>
+            <TextBlock HorizontalAlignment="Left" Margin="9,106,0,0" TextWrapping="Wrap" Text="Confirm password" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+            <TextBlock HorizontalAlignment="Left" Name="resultView"
+                   Margin="9,157,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+            <TextBlock HorizontalAlignment="Left" Margin="11,11,0,0" TextWrapping="Wrap" Text="Full Name" VerticalAlignment="Top" Height="16" Grid.ColumnSpan="2"/>
+            <TextBox Grid.ColumnSpan="2" Name="nameText"
+                 HorizontalAlignment="Left" Height="23" Margin="96.2,10,-0.4,0" 
+                     TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="161" Grid.Column="1"/>
+
+        </Grid>
+    </Border>
+</Page>

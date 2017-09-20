@@ -1,0 +1,184 @@
+﻿<UserControl x:Class="ModernUINavigationApp1.Pages.CreateCV"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="1000">
+    <Grid Style="{StaticResource ContentRoot}">
+        <ScrollViewer>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Border BorderBrush="#FF000000" BorderThickness="1,1,3,3" CornerRadius="4,4,4,4" Margin="2,2,2,2" Padding="4,4,4,4">
+                    <StackPanel MinWidth="200" Orientation="Vertical" >
+                        <TextBlock Text="General Info" Style="{StaticResource Heading2}" Margin="0,0,0,8" />
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,2">
+                            <TextBlock Width="100" Text="Name"/>
+                            <TextBox Width="250" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,2">
+                            <TextBlock Text="Age" Width="100"/>
+                            <TextBox Width="250" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,2">
+                            <TextBlock Text="Phone" Width="100"/>
+                            <TextBox Width="250" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,2">
+                            <TextBlock Width="100" Text="E-mail"/>
+                            <TextBox Width="250" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Width="100" Text="ID"/>
+                            <TextBox Width="250" />
+                        </StackPanel>
+                        <DataGrid />
+                    </StackPanel>
+                </Border>
+                <Border  Grid.Row="0" Grid.Column="1"
+                        BorderBrush="#FF000000" BorderThickness="1,1,3,3" CornerRadius="4,4,4,4" Margin="2,2,2,2" Padding="4,4,4,4">
+                    <StackPanel MinWidth="200" Orientation="Vertical" >
+                        <Grid>
+                            <TextBlock Text="Skill Set" Style="{StaticResource Heading2}" HorizontalAlignment="Left" />
+                            <Button Name="Button_AddSkillSet" Content="+" BorderBrush="Beige"   HorizontalAlignment="Right" Click="Button_Click_1"
+                                    Margin="0,0,0,2"/>
+                        </Grid>
+                        <StackPanel MinWidth="200" Orientation="Horizontal" Margin="0,0,0,8" Name="spAddSkillSet" Visibility="Collapsed">
+                            <TextBox Width="200" Margin="0,0,8,0" Text="Name" Foreground="Gray" />
+                            <TextBox Width="50" Margin="0,0,8,0" Foreground="Gray" Text="Months"/>
+                            <TextBox Width="50" Margin="0,0,8,0" Foreground="Gray" Text="Rating"/>
+                            <Button  Margin="0,0,8,0" Content="Save" BorderBrush="Beige"/>
+                        </StackPanel>
+                        <ListView Background="Beige" Name="lvSkillSet" Height="130">
+                            <ListView.Resources>
+                                <Style TargetType="{x:Type GridViewColumnHeader}">
+                                    <Setter Property="HorizontalContentAlignment" Value="Left" />
+                                    <Setter Property="Background" Value="AliceBlue" />
+                                </Style>
+                            </ListView.Resources>
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn Header="Name"  Width="270" DisplayMemberBinding="{Binding name}"  />
+                                    <GridViewColumn Header="Months"  Width="80" DisplayMemberBinding="{Binding months}" />
+                                    <GridViewColumn Header="Rating"  Width="50" DisplayMemberBinding="{Binding rating}" />
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                    </StackPanel>
+                </Border>
+                <Border  Grid.Row="1" Grid.Column="0"
+                        BorderBrush="#FF000000" BorderThickness="1,1,3,3" CornerRadius="4,4,4,4" Margin="2,2,2,2" Padding="4,4,4,4">
+                    <StackPanel MinWidth="200" Orientation="Vertical" >
+                        <Grid>
+                            <TextBlock Text="Work Experience" Style="{StaticResource Heading2}" HorizontalAlignment="Left" />
+                            <Button Name="Button_AddWorkExperience" Content="+" BorderBrush="Beige"   HorizontalAlignment="Right" Click="AddWorkExperience_Click_1"
+                                    Margin="0,0,0,2"/>
+                        </Grid>
+                        <StackPanel MinWidth="200" Orientation="Horizontal" Margin="0,0,0,8" Name="StackPanel_AddWorkExperience" Visibility="Collapsed">
+                            <TextBox Width="200" Margin="0,0,8,0" Text="Name" Foreground="Gray" />
+                            <TextBox Width="50" Margin="0,0,8,0" Foreground="Gray" Text="Months"/>
+                            <TextBox Width="50" Margin="0,0,8,0" Foreground="Gray" Text="Rating"/>
+                            <Button  Margin="0,0,8,0" Content="Save" BorderBrush="Beige"/>
+                        </StackPanel>
+                        <ListView Background="Beige" Name="lvWorkExperience" Height="130">
+                            <ListView.Resources>
+                                <Style TargetType="{x:Type GridViewColumnHeader}">
+                                    <Setter Property="HorizontalContentAlignment" Value="Left" />
+                                    <Setter Property="Background" Value="AliceBlue" />
+                                </Style>
+                            </ListView.Resources>
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn Header="Company"  Width="200" DisplayMemberBinding="{Binding company}"  />
+                                    <GridViewColumn Header="Position"  Width="200" DisplayMemberBinding="{Binding position}" />
+                                    <GridViewColumn Header="Years"  Width="50" DisplayMemberBinding="{Binding months}" />
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                    </StackPanel>
+                </Border>
+                <Border  Grid.Row="1" Grid.Column="1"
+                        BorderBrush="#FF000000" BorderThickness="1,1,3,3" CornerRadius="4,4,4,4" Margin="2,2,2,2" Padding="4,4,4,4">
+                    <StackPanel MinWidth="200" Orientation="Vertical" Grid.Row="1" Grid.Column="1">
+                        <TextBlock Text="Qualifications" Style="{StaticResource Heading2}" />
+
+                        <StackPanel MinWidth="200" Orientation="Horizontal" Margin="0,0,0,8"
+                                    Name="StackPanel_AddQualification" Visibility="Visible">
+                            <TextBox Width="200" Margin="0,0,8,0" Text="Com" Foreground="Gray" />
+                            <TextBox Width="50" Margin="0,0,8,0" Foreground="Gray" Text="Months"/>
+                            <TextBox Width="50" Margin="0,0,8,0" Foreground="Gray" Text="Rating"/>
+                            <Button  Margin="0,0,8,0" Content="Save" BorderBrush="Beige"/>
+                        </StackPanel>
+                        <ListView Background="Beige" Name="lvQualifications" Height="130">
+                            <ListView.Resources>
+                                <Style TargetType="{x:Type GridViewColumnHeader}">
+                                    <Setter Property="HorizontalContentAlignment" Value="Left" />
+                                    <Setter Property="Background" Value="AliceBlue" />
+                                </Style>
+                            </ListView.Resources>
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn Header="Company"  Width="200" DisplayMemberBinding="{Binding company}"  />
+                                    <GridViewColumn Header="Position"  Width="200" DisplayMemberBinding="{Binding position}" />
+                                    <GridViewColumn Header="Years"  Width="50" DisplayMemberBinding="{Binding months}" />
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                    </StackPanel>
+                    
+                </Border>
+                <Border  Grid.Row="2" Grid.Column="0"
+                        BorderBrush="#FF000000" BorderThickness="1,1,3,3" CornerRadius="4,4,4,4" Margin="2,2,2,2" Padding="4,4,4,4">
+                    <StackPanel MinWidth="200" Orientation="Vertical" Grid.Row="2" Grid.Column="0">
+                        <TextBlock Text="References" Style="{StaticResource Heading2}" />
+                        <ListView Background="Beige" Name="lvReferences" Height="70">
+                            <ListView.Resources>
+                                <Style TargetType="{x:Type GridViewColumnHeader}">
+                                    <Setter Property="HorizontalContentAlignment" Value="Left" />
+                                    <Setter Property="Background" Value="AliceBlue" />
+                                </Style>
+                            </ListView.Resources>
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn Header="Company"  Width="200" DisplayMemberBinding="{Binding company}"  />
+                                    <GridViewColumn Header="Position"  Width="200" DisplayMemberBinding="{Binding position}" />
+                                    <GridViewColumn Header="Years"  Width="50" DisplayMemberBinding="{Binding months}" />
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                    </StackPanel>
+                </Border>
+                <Border  Grid.Row="2" Grid.Column="1"
+                        BorderBrush="#FF000000" BorderThickness="1,1,3,3" CornerRadius="4,4,4,4" Margin="2,2,2,2" Padding="4,4,4,4">
+                    <StackPanel MinWidth="200" Orientation="Vertical" Grid.Row="2" Grid.Column="1">
+                        <TextBlock Text="Links" Style="{StaticResource Heading2}" />
+                        <ListView Background="Beige" Name="lvLinks" Height="70">
+                            <ListView.Resources>
+                                <Style TargetType="{x:Type GridViewColumnHeader}">
+                                    <Setter Property="HorizontalContentAlignment" Value="Left" />
+                                    <Setter Property="Background" Value="AliceBlue" />
+                                </Style>
+                            </ListView.Resources>
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn Header="Company"  Width="200" DisplayMemberBinding="{Binding company}"  />
+                                    <GridViewColumn Header="Position"  Width="200" DisplayMemberBinding="{Binding position}" />
+                                    <GridViewColumn Header="Years"  Width="50" DisplayMemberBinding="{Binding months}" />
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

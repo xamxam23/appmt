@@ -1,0 +1,20 @@
+﻿ModernUINavigationApp1
+
+
+winexe
+C#
+.cs
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\ModernUINavigationApp1\ModernUINavigationApp1\obj\Debug\
+ModernUINavigationApp1
+none
+false
+DEBUG;TRACE
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\ModernUINavigationApp1\ModernUINavigationApp1\App.xaml
+11-784106632
+9-438849751
+15-1704187204
+15-1511771299
+MainWindow.xaml;Pages\BasicPage1.xaml;Pages\cv\CreateCV.xaml;Pages\CVInputPage.xaml;Pages\CVPage.xaml;Pages\Login.xaml;Pages\Register.xaml;Pages\Settings\About.xaml;Pages\Settings\Appearance.xaml;Pages\Home.xaml;Pages\SettingsPage.xaml;
+
+False
+
