@@ -33,6 +33,11 @@ namespace hackCodeit
 
             NavigationWindow window = new NavigationWindow();
             window.Source = new Uri("Pages/Coding/CodingEditor.xaml", UriKind.Relative);
+            window.Width = 550;
+            window.Height = 525;
+            window.ShowsNavigationUI = false;
+            window.Icon = null;
+            window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             window.ShowDialog();
         }
     }
