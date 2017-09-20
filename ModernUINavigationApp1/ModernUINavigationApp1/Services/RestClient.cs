@@ -5,6 +5,7 @@ using System.Net;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace ServiceLayer
 {
@@ -18,6 +19,7 @@ namespace ServiceLayer
             return message;
         }
     }
+ 
     public class RestClient
     {
         public static readonly string SERVER_URL = "http://localhost:88/hack";
@@ -56,6 +58,23 @@ namespace ServiceLayer
             catch (Exception e) { Console.WriteLine(e.Message); }
             Console.WriteLine(rs);
             return rs;
+        }
+
+        public static T post<T>(string cmd, Dictionary<string, string> data)
+        {
+            try
+            {
+                string rs = RestClient.post(cmd, data);
+                Console.WriteLine(rs);
+                T r = JsonConvert.DeserializeObject<T>(rs);
+                Console.WriteLine(r);
+                return r;
+            }
+            catch (JsonException e)
+            {
+                Console.WriteLine(e);
+            }
+            return default(T);
         }
     }
 }

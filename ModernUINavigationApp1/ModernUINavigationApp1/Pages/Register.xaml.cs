@@ -35,7 +35,7 @@ namespace hackCodeit
             Task.Factory.StartNew(() =>
             {
                
-                ServiceLayer.BaseResult data = ServiceLayer.RestRegister.register(name, user, pass1);
+                ServiceLayer.BaseResult data = ServiceLayer.RestUsers.register(name, user, pass1);
                 if (data != null)
                     Dispatcher.BeginInvoke((Action)(() =>
                     {

@@ -7,7 +7,18 @@ using System.Threading.Tasks;
 
 namespace ServiceLayer
 {
-    public class RestRegister
+    public class GetUsersResponse : BaseResult
+    {
+        public List<User> data { get; set; }
+    }
+    public class User
+    {
+        public int id { get; set; }
+        public string name { get; set; }
+        public string user { get; set; }
+        public string cv { get; set; }       
+    }
+    public class RestUsers
     {
         public static BaseResult login(string user, string pass)
         {
@@ -16,7 +27,7 @@ namespace ServiceLayer
                 Dictionary<string, string> data = new Dictionary<string, string>();
                 data["user"] = user;
                 data["pass"] = pass;
-                return post<BaseResult>("login", data);
+                return RestClient.post<BaseResult>("login", data);
             }
             catch (JsonException e)
             {
@@ -33,7 +44,7 @@ namespace ServiceLayer
                 data["name"] = name;
                 data["user"] = user;
                 data["pass"] = pass;
-                return post<BaseResult>("register", data);
+                return RestClient.post<BaseResult>("register", data);
             }
             catch (JsonException e)
             {
@@ -42,22 +53,34 @@ namespace ServiceLayer
             return null;
         }
 
-        public static T post<T>(string cmd, Dictionary<string, string> data)
+        public static BaseResult getUsers()
         {
             try
             {
-                string rs = RestClient.post(cmd, data);
-                Console.WriteLine(rs);
-                T r = JsonConvert.DeserializeObject<T>(rs);
-                Console.WriteLine(r);
-                return r;
+                Dictionary<string, string> data = new Dictionary<string, string>();
+                return RestClient.post<GetUsersResponse>("getusers", data);
             }
             catch (JsonException e)
             {
                 Console.WriteLine(e);
             }
-            return default(T);
+            return null;
         }
 
+        public static BaseResult updateCV(string user, string cv)
+        {
+            try
+            {
+                Dictionary<string, string> data = new Dictionary<string, string>();
+                data["user"] = user;
+                data["cv"] = cv;
+                return RestClient.post<BaseResult>("updatecv", data);
+            }
+            catch (JsonException e)
+            {
+                Console.WriteLine(e);
+            }
+            return null;
+        }
     }
 }

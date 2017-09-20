@@ -31,7 +31,7 @@ namespace hackCodeit
             string pass = passText.Text;
                 
             Task.Factory.StartNew((Action)(()=>{
-                ServiceLayer.BaseResult data = ServiceLayer.RestRegister.login(user, pass);
+                ServiceLayer.BaseResult data = ServiceLayer.RestUsers.login(user, pass);
                 if (data != null)
                     Dispatcher.BeginInvoke((Action)(() =>
                     {

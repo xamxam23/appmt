@@ -68,8 +68,8 @@
       <DependentUpon>CodingQuestions.xaml</DependentUpon>
     </Compile>
     <Compile Include="Services\RestCoding.cs" />
-    <Compile Include="Services\RestFactory.cs" />
-    <Compile Include="Services\RestRegister.cs" />
+    <Compile Include="Services\RestClient.cs" />
+    <Compile Include="Services\RestUsers.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
