@@ -23,11 +23,13 @@ namespace ModernUINavigationApp1.Pages
         public SearchCandidates()
         {
             InitializeComponent();
+
             List<Model.CVScored> data = new List<Model.CVScored>();
             Random rand = new Random();
             for (int i = 0; i < 100; i++)
             {
-                Model.CVScored item = new Model.CVScored() {
+                Model.CVScored item = new Model.CVScored()
+                {
                     name = "user " + rand.NextDouble(),
                     workScore = 100 * rand.NextDouble(),
                     skillScore = 100 * rand.NextDouble(),
