@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\absa\appmt\ModernUINavigationApp1\ModernUINavigationApp1\obj\Debug\
+C:\absa\2\appmt\ModernUINavigationApp1\ModernUINavigationApp1\obj\Debug\
 ModernUINavigationApp1
 none
 false
 DEBUG;TRACE
-C:\absa\appmt\ModernUINavigationApp1\ModernUINavigationApp1\App.xaml
-13-2121553494
+C:\absa\2\appmt\ModernUINavigationApp1\ModernUINavigationApp1\App.xaml
+13-2134300676
 9-438849751
-20107175877
-14-737644900
-MainWindow.xaml;Pages\BasicPage1.xaml;Pages\CodingEditor.xaml;Pages\CodingQuestions.xaml;Pages\cv\CreateCV.xaml;Pages\CVInputPage.xaml;Pages\CVPage.xaml;Pages\Login.xaml;Pages\Register.xaml;Pages\Settings\About.xaml;Pages\Settings\Appearance.xaml;Pages\Home.xaml;Pages\SettingsPage.xaml;
+20-2021087447
+142008283792
+MainWindow.xaml;Pages\BasicPage1.xaml;Pages\Coding\CodingEditor.xaml;Pages\Coding\CodingQuestions.xaml;Pages\CV\CreateCV.xaml;Pages\CVInputPage.xaml;Pages\CVPage.xaml;Pages\Login.xaml;Pages\Register.xaml;Pages\Settings\About.xaml;Pages\Settings\Appearance.xaml;Pages\Home.xaml;Pages\SettingsPage.xaml;
 
 False
 

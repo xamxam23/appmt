@@ -61,10 +61,10 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Pages\CodingEditor.xaml.cs">
+    <Compile Include="Pages\Coding\CodingEditor.xaml.cs">
       <DependentUpon>CodingEditor.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\CodingQuestions.xaml.cs">
+    <Compile Include="Pages\Coding\CodingQuestions.xaml.cs">
       <DependentUpon>CodingQuestions.xaml</DependentUpon>
     </Compile>
     <Compile Include="Services\RestCoding.cs" />
@@ -82,15 +82,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\CodingEditor.xaml">
+    <Page Include="Pages\Coding\CodingEditor.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\CodingQuestions.xaml">
+    <Page Include="Pages\Coding\CodingQuestions.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\cv\CreateCV.xaml">
+    <Page Include="Pages\CV\CreateCV.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -118,7 +118,7 @@
     <Compile Include="Pages\BasicPage1.xaml.cs">
       <DependentUpon>BasicPage1.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\cv\CreateCV.xaml.cs">
+    <Compile Include="Pages\CV\CreateCV.xaml.cs">
       <DependentUpon>CreateCV.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\CVInputPage.xaml.cs">
