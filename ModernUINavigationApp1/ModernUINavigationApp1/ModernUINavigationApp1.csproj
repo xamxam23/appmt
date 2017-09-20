@@ -34,6 +34,10 @@
     <Reference Include="FirstFloor.ModernUI">
       <HintPath>..\packages\ModernUI.WPF.1.0.9\lib\net45\FirstFloor.ModernUI.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -57,6 +61,15 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Pages\CodingEditor.xaml.cs">
+      <DependentUpon>CodingEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CodingQuestions.xaml.cs">
+      <DependentUpon>CodingQuestions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Services\RestCoding.cs" />
+    <Compile Include="Services\RestFactory.cs" />
+    <Compile Include="Services\RestRegister.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -68,6 +81,14 @@
     <Page Include="Pages\BasicPage1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\CodingEditor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\CodingQuestions.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\cv\CreateCV.xaml">
       <SubType>Designer</SubType>
@@ -143,16 +164,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\hackCodeit\hackCodeit\HackCodeit.csproj">
-      <Project>{dbc54576-d53c-4803-9daa-29305fc1242b}</Project>
-      <Name>HackCodeit</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\hackCodeit\ServiceLayer\ServiceLayer.csproj">
-      <Project>{2e2da58f-fc3b-4d8d-b3c4-c7130127d81b}</Project>
-      <Name>ServiceLayer</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <CodeAnalysisDictionary Include="image\bg-black.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -179,6 +190,9 @@
     <Content Include="Pages\images\car64red.png" />
     <Content Include="Pages\images\car64yellow.png" />
     <Content Include="Pages\images\download.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Coding\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
