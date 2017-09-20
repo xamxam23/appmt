@@ -16,7 +16,11 @@ namespace ServiceLayer
         public int id { get; set; }
         public string name { get; set; }
         public string user { get; set; }
-        public string cv { get; set; }       
+        public string cv { get; set; }
+        public override string ToString()
+        {
+            return base.ToString() + String.Format(": {0} {1} {2} {3}", id, name, user, cv);
+        }
     }
     public class RestUsers
     {
@@ -53,7 +57,7 @@ namespace ServiceLayer
             return null;
         }
 
-        public static BaseResult getUsers()
+        public static GetUsersResponse getUsers()
         {
             try
             {
