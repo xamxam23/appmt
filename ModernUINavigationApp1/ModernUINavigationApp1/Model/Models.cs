@@ -16,7 +16,7 @@ namespace ModernUINavigationApp1.Model
         public double workScore { get; set; }
         public double skillScore { get; set; }
 
-        public double total
+        public double totalScore
         {
             get
             {

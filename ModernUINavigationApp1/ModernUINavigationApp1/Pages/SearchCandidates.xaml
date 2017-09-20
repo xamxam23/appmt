@@ -9,8 +9,8 @@
     <Grid Style="{StaticResource ContentRoot}">
         <ScrollViewer>
             <StackPanel MinWidth="200">
-                <TextBlock Text="BASIC PAGE" Style="{StaticResource Heading2}" />
-                <TextBlock Text="Content goes here" />
+                <TextBlock Text="Enter Search Key" Style="{StaticResource Heading2}" />
+                <TextBox Text=""  Margin="4,4,4,4" Name="TextBox_SearchKey" />
                 <DataGrid  MinHeight="200"
                            LoadingRow="DataGrid_LoadingRow"
                                     HorizontalAlignment="Left"
@@ -18,11 +18,14 @@
                                     IsReadOnly="True" ColumnWidth="*"  Grid.Row="1" GridLinesVisibility="None"
                                     VerticalScrollBarVisibility="Visible" 
                                     AutoGenerateColumns="False"  Name="dataGridUsers" >
+                    
                     <DataGrid.Columns>
                         <DataGridTextColumn Binding="{Binding name}" Header="Full Name" />
                         <DataGridTextColumn Binding="{Binding qualificationScore}" Header="Qualification Score" />
                         <DataGridTextColumn Binding="{Binding workScore}" Header="Work Score" />
                         <DataGridTextColumn Binding="{Binding skillScore}" Header="Skill Score" />
+
+                        <DataGridTextColumn Binding="{Binding totalScore}" Header="Total Score" />
                     </DataGrid.Columns>
                     <DataGrid.ContextMenu>
                         <ContextMenu>
