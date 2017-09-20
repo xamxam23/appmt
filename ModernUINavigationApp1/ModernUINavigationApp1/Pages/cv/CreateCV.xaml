@@ -26,23 +26,23 @@
                         <TextBlock Text="General Info" Style="{StaticResource Heading2}" Margin="0,0,0,8" />
                         <StackPanel Orientation="Horizontal" Margin="0,0,0,2">
                             <TextBlock Width="100" Text="Name"/>
-                            <TextBox Width="250" />
+                            <TextBox Name="name" Width="250"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" Margin="0,0,0,2">
                             <TextBlock Text="Age" Width="100"/>
-                            <TextBox Width="250" />
+                            <TextBox Name="age" Width="250" />
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" Margin="0,0,0,2">
                             <TextBlock Text="Phone" Width="100"/>
-                            <TextBox Width="250" />
+                            <TextBox Name="phone" Width="250" />
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" Margin="0,0,0,2">
                             <TextBlock Width="100" Text="E-mail"/>
-                            <TextBox Width="250" />
+                            <TextBox Name="email" Width="250" />
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Width="100" Text="ID"/>
-                            <TextBox Width="250" />
+                            <TextBox Name="id" Width="250" />
                         </StackPanel>
                         <DataGrid />
                     </StackPanel>
@@ -186,7 +186,7 @@
                     </StackPanel>
                 </Border>
                 <Button Content="Click Me" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Right"
-                        VerticalAlignment="Center"/>
+                        VerticalAlignment="Center" Click="Button_Click_2"/>
                 
             </Grid>
         </ScrollViewer>

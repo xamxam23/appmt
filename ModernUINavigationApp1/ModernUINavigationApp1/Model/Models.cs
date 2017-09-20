@@ -8,34 +8,235 @@ namespace ModernUINavigationApp1.Model
 {
     class CVInfo
     {
-        public string name { get; set; }
-        public int age { get; set; }
-        public int rating { get; set; }
+        private string userName;
+        private int userAge;
+        private int userRating;
+        private List<SkillSet> userSkillSet;
+        private List<WorkExperience> userWorkExperience;
+        private List<Qualifications> userQualifications;
+        private List<References> userReferences;
+        private List<Links> userLinks;
+
+        public string name
+        {
+            get
+            {
+                return userName;
+            }
+            set
+            {
+                userName = value;
+            }
+        }
+        public int age
+        {
+            get
+            {
+                return userAge;
+            }
+            set
+            {
+                userAge = value;
+            }
+        }
+        public int rating
+        {
+            get
+            {
+                return userRating;
+            }
+            set
+            {
+                userRating = value;
+            }
+        }
+        public List<SkillSet> skillSet
+        {
+            get
+            {
+                return userSkillSet;
+            }
+            set
+            {
+                userSkillSet = value;
+            }
+        }
+        public List<WorkExperience> workExperience
+        {
+            get
+            {
+                return userWorkExperience;
+            }
+            set
+            {
+                userWorkExperience = value;
+            }
+        }
+        public List<Qualifications> qualifications
+        {
+            get
+            {
+                return userQualifications;
+            }
+            set
+            {
+                userQualifications = value;
+            }
+        }
+        public List<References> references
+        {
+            get
+            {
+                return userReferences;
+            }
+            set
+            {
+                userReferences = value;
+            }
+        }
+        public List<Links> links
+        {
+            get
+            {
+                return userLinks;
+            }
+            set
+            {
+                userLinks = value;
+            }
+        }
     }
 
     class SkillSet
     {
-        public string name { get; set; }
-        public int months { get; set; }
-        public int rating { get; set; }
+        public string skillName;
+        public int skillMonths;
+        public int skillRating;
+
+        public string name
+        {
+            get
+            {
+                return skillName;
+            }
+            set
+            {
+                skillName = value;
+            }
+        }
+        public int months
+        {
+            get
+            {
+                return skillMonths;
+            }
+            set
+            {
+                skillMonths = value;
+            }
+        }
+        public int rating
+        {
+            get
+            {
+                return skillRating;
+            }
+            set
+            {
+                skillRating = value;
+            }
+        }
     }
 
     class WorkExperience
     {
-        public string company { get; set; }
-        public string position { get; set; }
-        public int months { get; set; }
+        private string workExperienceperCompany;
+        private string workExperiencePosition;
+        private int workExperienceMonths;
+
+        public string company
+        {
+            get
+            {
+                return workExperienceperCompany;
+            }
+            set
+            {
+                workExperienceperCompany = value;
+            }
+        }
+        public string position
+        {
+            get
+            {
+                return workExperiencePosition;
+            }
+            set
+            {
+                workExperiencePosition = value;
+            }
+        }
+        public int months
+        {
+            get
+            {
+                return workExperienceMonths;
+            }
+            set
+            {
+                workExperienceMonths = value;
+            }
+        }
     }
 
     class Qualifications
     {
-        public string title { get; set; }
-        public string institution {get; set; }
-        public int year { get; set; }
+        private string qualificationsTitle;
+        private string qualificationsInstitution;
+        private int qualificationsYear;
+
+        public string title
+        {
+            get
+            {
+                return qualificationsTitle;
+            }
+            set
+            {
+                qualificationsTitle = value;
+            }
+        }
+        public string institution
+        {
+            get
+            {
+                return qualificationsInstitution;
+            }
+            set
+            {
+                qualificationsInstitution = value;
+            }
+        }
+        public int year
+        {
+            get
+            {
+                return qualificationsYear;
+            }
+            set
+            {
+                qualificationsYear = value;
+            }
+        }
     }
 
     class References
     {
+        private string referencesName;
+        private string referencesEmail;
+        private string referencesPhone;
+        private string referencesCompany;
+
         public string name { get; set; }
         public string email { get; set; }
         public string phone { get; set; }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ModernUINavigationApp1.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -101,6 +102,64 @@ namespace ModernUINavigationApp1.Pages
                 panel.Visibility = System.Windows.Visibility.Collapsed;
                 button.Content = "+";
             }
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            string applicantName = name.Text;
+            string applicantAge = age.Text;
+            string applicantPhone = phone.Text;
+            string applicantEmail = email.Text;
+            string applicantID = id.Text;
+            List<SkillSet> skillSet = getSkillSet();
+            List<WorkExperience> workExperience = getWorkExperience();
+            List<Qualifications> qualification = getQualifications();
+            string s = applicantAge + applicantEmail;
+        }
+
+        private List<Qualifications> getQualifications()
+        {
+            List<Qualifications> results = new List<Qualifications>();
+
+            if (lvQualifications.Items.Count == 0)
+                return results;
+
+            foreach (Qualifications qualification in lvQualifications.Items)
+            {
+                results.Add(qualification);
+            }
+
+            return results;
+        }
+
+        private List<WorkExperience> getWorkExperience()
+        {
+            List<WorkExperience> results = new List<WorkExperience>();
+
+            if (lvWorkExperience.Items.Count == 0)
+                return results;
+
+            foreach (WorkExperience experience in lvWorkExperience.Items)
+            {
+                results.Add(experience);
+            }
+
+            return results;
+        }
+
+        private List<SkillSet> getSkillSet()
+        {
+            List<SkillSet> results = new List<SkillSet>();
+
+            if (lvSkillSet.Items.Count == 0)
+                return results;
+
+            foreach (SkillSet skill in lvSkillSet.Items)
+            {
+                results.Add(skill);
+            }
+
+            return results;
         }
     }
 }
