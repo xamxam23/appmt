@@ -27,7 +27,13 @@ namespace hackCodeit
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-        
+            NavigationService nav = NavigationService.GetNavigationService((Button)sender);
+            if (nav != null)
+                nav.Navigate(new Uri("CodingEditor.xaml", UriKind.RelativeOrAbsolute));
+
+            NavigationWindow window = new NavigationWindow();
+            window.Source = new Uri("Pages/Coding/CodingEditor.xaml", UriKind.Relative);
+            window.ShowDialog();
         }
     }
 }

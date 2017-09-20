@@ -30,7 +30,9 @@ namespace hackCodeit
             var textRange = new TextRange(rtb.Document.ContentStart, rtb.Document.ContentEnd);
             return textRange.Text;
         }
+        
         object lockObject = new object();
+
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             resultView.Text = "...";
@@ -50,8 +52,6 @@ namespace hackCodeit
                         }));
                 }
             });
-
         }
-   
     }
 }
