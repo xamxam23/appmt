@@ -62,6 +62,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Computation\Calculator.cs" />
     <Compile Include="Pages\Coding\CodingEditor.xaml.cs">
       <DependentUpon>CodingEditor.xaml</DependentUpon>
     </Compile>

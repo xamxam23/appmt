@@ -1,4 +1,6 @@
 ﻿using ModernUINavigationApp1.Model;
+using Newtonsoft.Json;
+using ServiceLayer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -107,14 +109,26 @@ namespace ModernUINavigationApp1.Pages
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             string applicantName = name.Text;
-            string applicantAge = age.Text;
+            int applicantAge = Convert.ToInt16(age.Text);
             string applicantPhone = phone.Text;
             string applicantEmail = email.Text;
             string applicantID = id.Text;
             List<SkillSet> skillSet = getSkillSet();
             List<WorkExperience> workExperience = getWorkExperience();
             List<Qualifications> qualification = getQualifications();
-            string s = applicantAge + applicantEmail;
+
+            CVInfo cvinfo = new CVInfo();
+            cvinfo.name = applicantName;
+            cvinfo.age = applicantAge;
+            cvinfo.rating = 3;
+            cvinfo.skillSet = skillSet;
+            cvinfo.workExperience = workExperience;
+            cvinfo.qualifications = qualification;
+
+            String serializedCVInfo = JsonConvert.SerializeObject(cvinfo);
+            ServiceLayer.RestUsers.updateCV("bob", serializedCVInfo);
+            //String s = jsonString + "ddf";
+
         }
 
         private List<Qualifications> getQualifications()
