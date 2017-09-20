@@ -6,7 +6,25 @@ using System.Threading.Tasks;
 
 namespace ModernUINavigationApp1.Model
 {
-    class CVInfo
+    public class CVScored
+    {
+        [System.ComponentModel.Browsable(false)]
+        public string user { get; set; }
+        public string name { get; set; }
+
+        public double qualificationScore { get; set; }
+        public double workScore { get; set; }
+        public double skillScore { get; set; }
+
+        public double total
+        {
+            get
+            {
+                return qualificationScore + workScore + skillScore;
+            }
+        }
+    }
+    public class CVInfo
     {
         private string userName;
         private int userAge;
@@ -107,7 +125,7 @@ namespace ModernUINavigationApp1.Model
         }
     }
 
-    class SkillSet
+    public class SkillSet
     {
         public string skillName;
         public int skillMonths;
@@ -148,7 +166,7 @@ namespace ModernUINavigationApp1.Model
         }
     }
 
-    class WorkExperience
+    public class WorkExperience
     {
         private string workExperienceperCompany;
         private string workExperiencePosition;
@@ -189,7 +207,7 @@ namespace ModernUINavigationApp1.Model
         }
     }
 
-    class Qualifications
+    public class Qualifications
     {
         private string qualificationsTitle;
         private string qualificationsInstitution;
@@ -230,7 +248,7 @@ namespace ModernUINavigationApp1.Model
         }
     }
 
-    class References
+    public class References
     {
         private string referencesName;
         private string referencesEmail;
@@ -243,7 +261,7 @@ namespace ModernUINavigationApp1.Model
         public string company { get; set; }
     }
 
-    class Links
+    public class Links
     {
         public string site { get; set; }
     }
