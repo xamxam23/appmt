@@ -22,7 +22,7 @@ namespace ServiceLayer
  
     public class RestClient
     {
-        public static readonly string SERVER_URL = "http://localhost:88/hack";
+        public static readonly string SERVER_URL = "http://10.10.20.37:88/hack";
         public static string post(string cmd)
         {
             try

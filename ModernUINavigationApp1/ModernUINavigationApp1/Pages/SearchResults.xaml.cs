@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace ModernUINavigationApp1.Pages
 {
     /// <summary>
-    /// Interaction logic for BasicPage1.xaml
+    /// Interaction logic for SearchResults.xaml
     /// </summary>
-    public partial class BasicPage1 : UserControl
+    public partial class SearchResults : UserControl
     {
-        public BasicPage1()
+        public SearchResults()
         {
             InitializeComponent();
         }

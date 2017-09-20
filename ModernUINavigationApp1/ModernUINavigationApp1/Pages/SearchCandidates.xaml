@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="ModernUINavigationApp1.Pages.SearchCandidates"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid Style="{StaticResource ContentRoot}">
+        <ScrollViewer>
+            <StackPanel MinWidth="200">
+                <TextBlock Text="Enter Search Key" Style="{StaticResource Heading2}" />
+                <TextBox Text=""  Margin="4,4,4,4" Name="TextBox_SearchKey" />
+                <DataGrid  MinHeight="200"
+                           LoadingRow="DataGrid_LoadingRow"
+                                    HorizontalAlignment="Left"
+                                    RowBackground="Beige"   Background="Beige" 
+                                    IsReadOnly="True" ColumnWidth="*"  Grid.Row="1" GridLinesVisibility="None"
+                                    VerticalScrollBarVisibility="Visible" 
+                                    AutoGenerateColumns="False"  Name="dataGridUsers" >
+                    
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding name}" Header="Full Name" />
+                        <DataGridTextColumn Binding="{Binding qualificationScore}" Header="Qualification Score" />
+                        <DataGridTextColumn Binding="{Binding workScore}" Header="Work Score" />
+                        <DataGridTextColumn Binding="{Binding skillScore}" Header="Skill Score" />
+
+                        <DataGridTextColumn Binding="{Binding totalScore}" Header="Total Score" />
+                    </DataGrid.Columns>
+                    <DataGrid.ContextMenu>
+                        <ContextMenu>
+                            <!--<MenuItem Click="MenuItem_EventQuery_Profile">-->
+                            <MenuItem>
+                                <MenuItem.Header>
+                                    <StackPanel Orientation="Horizontal">
+                                        <!--<Image Width="20" Height="20" Source="img/account-card-details.png" />-->
+                                        <TextBlock Text="View" Margin="5,0,0,0" VerticalAlignment="Center" />
+                                    </StackPanel>
+                                </MenuItem.Header>
+                            </MenuItem>
+                        </ContextMenu>
+                    </DataGrid.ContextMenu>
+                </DataGrid>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>
