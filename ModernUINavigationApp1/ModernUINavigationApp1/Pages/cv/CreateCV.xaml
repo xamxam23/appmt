@@ -134,9 +134,8 @@
                             </ListView.Resources>
                             <ListView.View>
                                 <GridView>
-                                    <GridViewColumn Header="Company"  Width="200" DisplayMemberBinding="{Binding company}"  />
-                                    <GridViewColumn Header="Position"  Width="200" DisplayMemberBinding="{Binding position}" />
-                                    <GridViewColumn Header="Years"  Width="50" DisplayMemberBinding="{Binding months}" />
+                                    <GridViewColumn Header="Institute"  Width="200" DisplayMemberBinding="{Binding title}"  />
+                                    <GridViewColumn Header="Years"  Width="50" DisplayMemberBinding="{Binding year}" />
                                 </GridView>
                             </ListView.View>
                         </ListView>

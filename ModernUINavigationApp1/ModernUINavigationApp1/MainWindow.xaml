@@ -18,6 +18,7 @@
                 <mui:Link DisplayName="Create CV " Source="/Pages/CV/CreateCV.xaml" />
                 <mui:Link DisplayName="Coding Test" Source="/Pages/Coding/CodingQuestions.xaml"/>
                 <mui:Link DisplayName="Search candidates" Source="/Pages/SearchCandidates.xaml"/>
+                <mui:Link DisplayName="Application" Source="/Pages/Hiring/ProfileHome.xaml"/>
             </mui:LinkGroup.Links>
         </mui:LinkGroup>
         <mui:LinkGroup DisplayName="settings" GroupKey="settings">

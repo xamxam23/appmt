@@ -69,6 +69,9 @@
     <Compile Include="Pages\Coding\CodingQuestions.xaml.cs">
       <DependentUpon>CodingQuestions.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Hiring\ProfileHome.xaml.cs">
+      <DependentUpon>ProfileHome.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\SearchCandidates.xaml.cs">
       <DependentUpon>SearchCandidates.xaml</DependentUpon>
     </Compile>
@@ -92,6 +95,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\CV\CreateCV.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Hiring\ProfileHome.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
