@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:mui="http://firstfloorsoftware.com/ModernUI"
-             mc:Ignorable="d" 
+             mc:Ignorable="d"  Height="600"
              d:DesignHeight="500" d:DesignWidth="1000">
     <Grid Style="{StaticResource ContentRoot}">
         <ScrollViewer>
@@ -13,11 +13,14 @@
                     <RowDefinition />
                     <RowDefinition />
                     <RowDefinition />
+                    <RowDefinition />
                 </Grid.RowDefinitions>
+                
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"/>
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
+                
                 <Border BorderBrush="#FF000000" BorderThickness="1,1,3,3" CornerRadius="4,4,4,4" Margin="2,2,2,2" Padding="4,4,4,4">
                     <StackPanel MinWidth="200" Orientation="Vertical" >
                         <TextBlock Text="General Info" Style="{StaticResource Heading2}" Margin="0,0,0,8" />
@@ -182,6 +185,9 @@
                         </ListView>
                     </StackPanel>
                 </Border>
+                <Button Content="Click Me" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Right"
+                        VerticalAlignment="Center"/>
+                
             </Grid>
         </ScrollViewer>
     </Grid>
