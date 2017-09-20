@@ -89,14 +89,11 @@ C:\absa\2\appmt\ModernUINavigationApp1\ModernUINavigationApp1\bin\Debug\FirstFlo
 C:\absa\2\appmt\ModernUINavigationApp1\ModernUINavigationApp1\bin\Debug\Newtonsoft.Json.dll
 C:\absa\2\appmt\ModernUINavigationApp1\ModernUINavigationApp1\bin\Debug\FirstFloor.ModernUI.xml
 C:\absa\2\appmt\ModernUINavigationApp1\ModernUINavigationApp1\bin\Debug\Newtonsoft.Json.xml
-C:\absa\2\appmt\ModernUINavigationApp1\ModernUINavigationApp1\obj\Debug\ModernUINavigationApp1.csprojResolveAssemblyReference.cache
 C:\absa\2\appmt\ModernUINavigationApp1\ModernUINavigationApp1\obj\Debug\MainWindow.baml
 C:\absa\2\appmt\ModernUINavigationApp1\ModernUINavigationApp1\obj\Debug\Pages\BasicPage1.baml
 C:\absa\2\appmt\ModernUINavigationApp1\ModernUINavigationApp1\obj\Debug\Pages\Coding\CodingEditor.baml
 C:\absa\2\appmt\ModernUINavigationApp1\ModernUINavigationApp1\obj\Debug\Pages\Coding\CodingQuestions.baml
 C:\absa\2\appmt\ModernUINavigationApp1\ModernUINavigationApp1\obj\Debug\Pages\CV\CreateCV.baml
-C:\absa\2\appmt\ModernUINavigationApp1\ModernUINavigationApp1\obj\Debug\Pages\CVInputPage.baml
-C:\absa\2\appmt\ModernUINavigationApp1\ModernUINavigationApp1\obj\Debug\Pages\CVPage.baml
 C:\absa\2\appmt\ModernUINavigationApp1\ModernUINavigationApp1\obj\Debug\Pages\Login.baml
 C:\absa\2\appmt\ModernUINavigationApp1\ModernUINavigationApp1\obj\Debug\Pages\Register.baml
 C:\absa\2\appmt\ModernUINavigationApp1\ModernUINavigationApp1\obj\Debug\Pages\Settings\About.baml
@@ -109,8 +106,6 @@ C:\absa\2\appmt\ModernUINavigationApp1\ModernUINavigationApp1\obj\Debug\Pages\Ba
 C:\absa\2\appmt\ModernUINavigationApp1\ModernUINavigationApp1\obj\Debug\Pages\Coding\CodingEditor.g.cs
 C:\absa\2\appmt\ModernUINavigationApp1\ModernUINavigationApp1\obj\Debug\Pages\Coding\CodingQuestions.g.cs
 C:\absa\2\appmt\ModernUINavigationApp1\ModernUINavigationApp1\obj\Debug\Pages\CV\CreateCV.g.cs
-C:\absa\2\appmt\ModernUINavigationApp1\ModernUINavigationApp1\obj\Debug\Pages\CVInputPage.g.cs
-C:\absa\2\appmt\ModernUINavigationApp1\ModernUINavigationApp1\obj\Debug\Pages\CVPage.g.cs
 C:\absa\2\appmt\ModernUINavigationApp1\ModernUINavigationApp1\obj\Debug\Pages\Login.g.cs
 C:\absa\2\appmt\ModernUINavigationApp1\ModernUINavigationApp1\obj\Debug\Pages\Register.g.cs
 C:\absa\2\appmt\ModernUINavigationApp1\ModernUINavigationApp1\obj\Debug\Pages\Settings\About.g.cs
@@ -121,3 +116,4 @@ C:\absa\2\appmt\ModernUINavigationApp1\ModernUINavigationApp1\obj\Debug\App.g.cs
 C:\absa\2\appmt\ModernUINavigationApp1\ModernUINavigationApp1\obj\Debug\ModernUINavigationApp1_Content.g.cs
 C:\absa\2\appmt\ModernUINavigationApp1\ModernUINavigationApp1\obj\Debug\ModernUINavigationApp1_MarkupCompile.cache
 C:\absa\2\appmt\ModernUINavigationApp1\ModernUINavigationApp1\obj\Debug\ModernUINavigationApp1.g.resources
+C:\absa\2\appmt\ModernUINavigationApp1\ModernUINavigationApp1\obj\Debug\ModernUINavigationApp1.csprojResolveAssemblyReference.cache

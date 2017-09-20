@@ -108,11 +108,15 @@
                 </Border>
                 <Border  Grid.Row="1" Grid.Column="1"
                         BorderBrush="#FF000000" BorderThickness="1,1,3,3" CornerRadius="4,4,4,4" Margin="2,2,2,2" Padding="4,4,4,4">
-                    <StackPanel MinWidth="200" Orientation="Vertical" Grid.Row="1" Grid.Column="1">
-                        <TextBlock Text="Qualifications" Style="{StaticResource Heading2}" />
-
+                    <StackPanel MinWidth="200" Orientation="Vertical" Grid.Row="1" Grid.Column="1" Name="StackPanel_Qualification">
+                        <Grid>
+                            <TextBlock Text="Qualification" Style="{StaticResource Heading2}" HorizontalAlignment="Left" />
+                            <Button Name="Button_AddQualification" Content="+" BorderBrush="Beige"   HorizontalAlignment="Right" Click="Button_AddQualification_Click_1"
+                                    Margin="0,0,0,2"/>
+                        </Grid>
                         <StackPanel MinWidth="200" Orientation="Horizontal" Margin="0,0,0,8"
-                                    Name="StackPanel_AddQualification" Visibility="Visible">
+                                    Visibility="Collapsed"
+                                    Name="StackPanel_AddQualification">
                             <TextBox Width="200" Margin="0,0,8,0" Text="Com" Foreground="Gray" />
                             <TextBox Width="50" Margin="0,0,8,0" Foreground="Gray" Text="Months"/>
                             <TextBox Width="50" Margin="0,0,8,0" Foreground="Gray" Text="Rating"/>

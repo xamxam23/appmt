@@ -76,30 +76,30 @@ namespace ModernUINavigationApp1.Pages
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            if (spAddSkillSet.Visibility == System.Windows.Visibility.Collapsed)
-            {
-                spAddSkillSet.Visibility = System.Windows.Visibility.Visible;
-                Button_AddSkillSet.Content = "-";
-            }
-            else
-            {
-                spAddSkillSet.Visibility = System.Windows.Visibility.Collapsed;
-                Button_AddSkillSet.Content = "+";
-            }
-            
+            HideShowAddPanel(spAddSkillSet, Button_AddSkillSet);
         }
 
         private void AddWorkExperience_Click_1(object sender, RoutedEventArgs e)
         {
-            if (StackPanel_AddWorkExperience.Visibility == System.Windows.Visibility.Collapsed)
+            HideShowAddPanel(StackPanel_AddWorkExperience, Button_AddWorkExperience);
+        }
+
+        private void Button_AddQualification_Click_1(object sender, RoutedEventArgs e)
+        {
+            HideShowAddPanel(StackPanel_AddQualification, Button_AddQualification);
+        }
+
+        private void HideShowAddPanel(StackPanel panel, Button button)
+        {
+            if (panel.Visibility == System.Windows.Visibility.Collapsed)
             {
-                StackPanel_AddWorkExperience.Visibility = System.Windows.Visibility.Visible;
-                Button_AddWorkExperience.Content = "-";
+                panel.Visibility = System.Windows.Visibility.Visible;
+                button.Content = "-";
             }
             else
             {
-                StackPanel_AddWorkExperience.Visibility = System.Windows.Visibility.Collapsed;
-                Button_AddWorkExperience.Content = "+";
+                panel.Visibility = System.Windows.Visibility.Collapsed;
+                button.Content = "+";
             }
         }
     }

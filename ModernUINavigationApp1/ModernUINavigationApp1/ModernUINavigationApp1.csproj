@@ -94,14 +94,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\CVInputPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\CVPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Pages\Login.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -120,12 +112,6 @@
     </Compile>
     <Compile Include="Pages\CV\CreateCV.xaml.cs">
       <DependentUpon>CreateCV.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\CVInputPage.xaml.cs">
-      <DependentUpon>CVInputPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\CVPage.xaml.cs">
-      <DependentUpon>CVPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
