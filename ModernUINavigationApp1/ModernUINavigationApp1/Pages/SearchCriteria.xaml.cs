@@ -87,8 +87,7 @@ namespace ModernUINavigationApp1.Pages
         {
             List<Criterion> preferedSkillSet = getPreferredCriterion();
             List<CVInfo> candidates = getRegisteredApplicants();
-            getScoredCVs(candidates, preferedSkillSet);
-            SearchPotentialCandidates();
+            ShowPotentialCandidates(getScoredCVs(candidates, preferedSkillSet));
         }
 
         private List<CVScored> getScoredCVs(List<CVInfo> candidates, List<Criterion> preferedSkillSet)
@@ -99,15 +98,23 @@ namespace ModernUINavigationApp1.Pages
             {
                 scoredCV = new CVScored();
 
-                int workExperienceScore = Calculator.calculateWorkExperience(cvInfo.workExperience);
-                int skillSetScore = Calculator.calculateSkillSet(cvInfo.skillSet, preferedSkillSet);
-                double qualificationScore = Calculator.calculateWorkQualifications(cvInfo.qualifications);
+                try
+                {
+                    double workExperienceScore = Calculator.calculateWorkExperience(cvInfo.workExperience);
+                    double skillSetScore = Calculator.calculateSkillSet(cvInfo.skillSet, preferedSkillSet);
+                    double qualificationScore = Calculator.calculateWorkQualifications(cvInfo.qualifications);
 
-                scoredCV.workScore = workExperienceScore;
-                scoredCV.skillScore = skillSetScore;
-                scoredCV.qualificationScore = qualificationScore;
+                    scoredCV.name = cvInfo.name;
+                    scoredCV.workScore = workExperienceScore;
+                    scoredCV.skillScore = skillSetScore;
+                    scoredCV.qualificationScore = qualificationScore;
 
-                results.Add(scoredCV);
+                    results.Add(scoredCV);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                }
             }
 
             return results;
@@ -153,9 +160,11 @@ namespace ModernUINavigationApp1.Pages
 
         }
 
-        void SearchPotentialCandidates()
+        void ShowPotentialCandidates(List<Model.CVScored> data)
         {
-            test();
+            dataGridUsers.DataContext = new[] { new Model.CVScored() };
+            dataGridUsers.ItemsSource = null;
+            dataGridUsers.ItemsSource = data;
             ScrollViewer_CriteriaContainer.Visibility = System.Windows.Visibility.Collapsed;
             ScrollViewer_ResultContainer.Visibility = System.Windows.Visibility.Visible;
         
@@ -166,7 +175,7 @@ namespace ModernUINavigationApp1.Pages
             e.Row.Header = (e.Row.GetIndex() + 1).ToString();
         }
 
-        void test()
+        List<Model.CVScored> createTestData()
         {
             List<Model.CVScored> data = new List<Model.CVScored>();
             Random rand = new Random();
@@ -181,9 +190,7 @@ namespace ModernUINavigationApp1.Pages
                 };
                 data.Add(item);
             }
-            dataGridUsers.DataContext = new[] { new Model.CVScored() };
-            dataGridUsers.ItemsSource = null;
-            dataGridUsers.ItemsSource = data;
+            return data;
         }
 
         private void BackToSearCriteria(object sender, RoutedEventArgs e)

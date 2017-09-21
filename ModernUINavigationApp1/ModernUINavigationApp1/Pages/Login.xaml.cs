@@ -24,10 +24,10 @@ namespace hackCodeit
         {
             InitializeComponent();
         }
-
+        public static string user;
         private void onLogin(object sender, RoutedEventArgs e)
         {
-            string user = userText.Text;
+            user = userText.Text;
             string pass = passText.Text;
                 
             Task.Factory.StartNew((Action)(()=>{

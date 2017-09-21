@@ -11,8 +11,8 @@ namespace ModernUINavigationApp1.Computation
     class Calculator
     {
         private static readonly int WORK_EXPERIENCE_POINTS = 2;
-        private static readonly int WANTED_SKILLS = 2;
-        private static readonly int OTHER_SKILLS = 1;
+        private static readonly double WANTED_SKILLS_POINT = 1;
+        private static readonly double OTHER_SKILLS = 0.5;
         private static readonly Dictionary<string, double> QUALIFICATION_POINTS = new Dictionary<string, double>
         {
             { "matric", .25 },
@@ -24,39 +24,44 @@ namespace ModernUINavigationApp1.Computation
             { "phd", 10 },
         };
 
-        public static int calculateWorkExperience(List<WorkExperience> workExperience)
+        public static double calculateWorkExperience(List<WorkExperience> workExperience)
         {
-            int results = 0;
+            double results = 0;
 
             foreach (WorkExperience wExperience in workExperience)
             {
-                results = results + (wExperience.months * WORK_EXPERIENCE_POINTS);
+                results = results + (wExperience.months * WORK_EXPERIENCE_POINTS/12);
             }
 
             return results;
         }
 
-        public static int calculateSkillSet(List<SkillSet> skillSet, List<Criterion> wantedSkillSet)
+        public static double calculateSkillSet(List<SkillSet> skillSet, List<Criterion> wantedSkillSet)
         {
-            int results = 0;
+            double results = 0;
 
             foreach (SkillSet skill in skillSet)
             {
-                for (int i = 0; i < wantedSkillSet.Count; i++)
+                if (wantedSkillSet.Count == 0)
                 {
-                    if (skill.skillName.Equals(wantedSkillSet[i].minQualifications))
+                    results += OTHER_SKILLS * skill.skillMonths / 12.0;
+                }
+                else
+                    for (int i = 0; i < wantedSkillSet.Count; i++)
                     {
-                        results = results + WANTED_SKILLS;
-                        break;
-                    }
-                    else
-                    {
-                        if ((i == (wantedSkillSet.Count - 1)))
+                        if (skill.skillName.Equals(wantedSkillSet[i].skill))
                         {
-                            results = results + OTHER_SKILLS;
+                            results = results + WANTED_SKILLS_POINT * skill.skillMonths / 12.0;
+                            break;
+                        }
+                        else
+                        {
+                            if ((i == (wantedSkillSet.Count - 1)))
+                            {
+                                results = results + OTHER_SKILLS * skill.skillMonths / 12.0;
+                            }
                         }
                     }
-                }
             }
 
             return results;
@@ -67,7 +72,14 @@ namespace ModernUINavigationApp1.Computation
             double results = 0;
             foreach (Qualifications qualification in qualifications)
             {
-                results = results + QUALIFICATION_POINTS[qualification.title.ToLower()];
+                try
+                {
+                    results = results + QUALIFICATION_POINTS[qualification.title.ToLower()];
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                }
             }
             return results;
         }

@@ -16,11 +16,28 @@ namespace ModernUINavigationApp1.Model
         public double workScore { get; set; }
         public double skillScore { get; set; }
 
+        public string qualificationScoreString
+        {
+            get
+            {
+                return qualificationScore.ToString("#.##");
+            }
+        }
+        public string workScoreString { get { return workScore.ToString("#.##"); } }
+        public string skillScoreString { get { return skillScore.ToString("#.##"); } }
+
         public double totalScore
         {
             get
             {
                 return qualificationScore + workScore + skillScore;
+            }
+        }
+        public string totalScoreString
+        {
+            get
+            {
+                return (qualificationScore + workScore + skillScore).ToString("#.##");
             }
         }
     }

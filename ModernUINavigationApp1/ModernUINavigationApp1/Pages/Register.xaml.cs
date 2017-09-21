@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -24,7 +25,7 @@ namespace hackCodeit
         {
             InitializeComponent();
         }
-
+        public static List<string[]> user_name = new List<string[]>();
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             resultView.Text = "...";
@@ -32,9 +33,16 @@ namespace hackCodeit
             string user = userText.Text;
             string pass1 = pass1Text.Text;
             string pass2 = pass2Text.Text;
+            for (int i = 0; i < 50; i++)
+            {
+                string[] a = new string[] { "name - " + i, "user - " + i };
+                user_name.Add(a);
+            }
+            //name = "name - " + i;
+            //user = "user - " + i;
+            Thread.Sleep(100);
             Task.Factory.StartNew(() =>
             {
-               
                 ServiceLayer.BaseResult data = ServiceLayer.RestUsers.register(name, user, pass1);
                 if (data != null)
                     Dispatcher.BeginInvoke((Action)(() =>
@@ -43,8 +51,7 @@ namespace hackCodeit
                         resultView.Text = data.ToString();
                     }));
             });
-
         }
     }
-    
+
 }

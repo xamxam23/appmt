@@ -103,7 +103,7 @@
                                 <GridView>
                                     <GridViewColumn Header="Company"  Width="200" DisplayMemberBinding="{Binding company}"  />
                                     <GridViewColumn Header="Position"  Width="200" DisplayMemberBinding="{Binding position}" />
-                                    <GridViewColumn Header="Years"  Width="50" DisplayMemberBinding="{Binding months}" />
+                                    <GridViewColumn Header="Months"  Width="50" DisplayMemberBinding="{Binding months}" />
                                 </GridView>
                             </ListView.View>
                         </ListView>
@@ -134,8 +134,8 @@
                             </ListView.Resources>
                             <ListView.View>
                                 <GridView>
-                                    <GridViewColumn Header="Institute"  Width="200" DisplayMemberBinding="{Binding title}"  />
-                                    <GridViewColumn Header="Years"  Width="50" DisplayMemberBinding="{Binding year}" />
+                                    <GridViewColumn Header="Type"  Width="200" DisplayMemberBinding="{Binding title}"  />
+                                    <GridViewColumn Header="Year Obtained"  Width="100" DisplayMemberBinding="{Binding year}" />
                                 </GridView>
                             </ListView.View>
                         </ListView>

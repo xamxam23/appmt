@@ -62,20 +62,20 @@
                 </Grid>
                 <TextBox Text=""  Margin="4,4,4,4" Name="TextBox_SearchKey" Visibility="Collapsed" />
                 <DataGrid  MinHeight="200"
+                           
                            LoadingRow="DataGrid_LoadingRow"
-                                    HorizontalAlignment="Left"
                                     RowBackground="Beige"   Background="Beige" 
                                     IsReadOnly="True" ColumnWidth="*"  Grid.Row="1" GridLinesVisibility="None"
                                     VerticalScrollBarVisibility="Visible" 
                                     AutoGenerateColumns="False"  Name="dataGridUsers" >
 
-                    <DataGrid.Columns>
+                    <DataGrid.Columns >
                         <DataGridTextColumn Binding="{Binding name}" Header="Full Name" />
-                        <DataGridTextColumn Binding="{Binding qualificationScore}" Header="Qualification Score" />
-                        <DataGridTextColumn Binding="{Binding workScore}" Header="Work Score" />
-                        <DataGridTextColumn Binding="{Binding skillScore}" Header="Skill Score" />
+                        <DataGridTextColumn Binding="{Binding qualificationScoreString}" Header="Qualification Score" />
+                        <DataGridTextColumn Binding="{Binding workScoreString}" Header="Work Score" />
+                        <DataGridTextColumn Binding="{Binding skillScoreString}" Header="Skill Score" />
 
-                        <DataGridTextColumn Binding="{Binding totalScore}" Header="Total Score" />
+                        <DataGridTextColumn Binding="{Binding totalScoreString}" Header="Total Score" />
                     </DataGrid.Columns>
                     <DataGrid.ContextMenu>
                         <ContextMenu>

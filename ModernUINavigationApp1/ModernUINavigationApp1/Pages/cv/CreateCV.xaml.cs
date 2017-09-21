@@ -26,32 +26,41 @@ namespace ModernUINavigationApp1.Pages
         public CreateCV()
         {
             InitializeComponent();
+            MockIt();
+        }
+        private void MockIt()
+        {
             setSkilSet();
             setWorkExperience();
             setQualifications();
         }
+        
+        Random rand = new Random();
+        string[] MockSkillSet = { "Java", "C#", "Python", "C", "C++", 
+                                    "PHP", "JavaScript" , "Java Enterprise",
+                                    "Perl", "SQL", "Scala", "Android", "iOS", "Object C", "Swift"};
+
+        string[] MockCompanies = { "IBM", "FNB", "Standard Bank", "DVT", "Entelect", 
+                                    "Indigo Cube", "MultiChoice" , "MTN",
+                                    "Vodacom", "Cellc", "Amazon", "Coca-Cola", "Microsoft", "Apple"};
+
+        string[] MockPosition = { "Developer", "Engineer", "Team Lead", "Senior Developer", "Junior iOs Developer", 
+                                    "Full-Stack Developer", "Front-End Developer" , "ScrumMaster"};
 
         private void setSkilSet()
         {
             //AAARecords.test_clean();
             //AAARecords.test_insert(0, 10000);
             List<Model.SkillSet> items = new List<Model.SkillSet>();
-            items.Add(new Model.SkillSet() { name = "java", months = 5, rating = 3 });
-            items.Add(new Model.SkillSet() { name = "C#", months = 5, rating = 2});
-            items.Add(new Model.SkillSet() { name = "Python", months = 5, rating = 1 });
-            items.Add(new Model.SkillSet() { name = "C", months = 1, rating = 2 });
-            items.Add(new Model.SkillSet() { name = "C++", months = 7, rating = 4 });
-            items.Add(new Model.SkillSet() { name = "PHP", months = 2, rating = 1 });
-            items.Add(new Model.SkillSet() { name = "Javascript", months = 5, rating = 1 });
-            items.Add(new Model.SkillSet() { name = "Perl", months = 1, rating = 1 });
-            items.Add(new Model.SkillSet() { name = "Kornshell", months = 5, rating = 1 });
-            items.Add(new Model.SkillSet() { name = "Scall", months = 1, rating = 1 });
-            items.Add(new Model.SkillSet() { name = "Kotlin", months = 1, rating = 1 });
-            items.Add(new Model.SkillSet() { name = "VB", months = 1, rating = 1 });
-            items.Add(new Model.SkillSet() { name = "SQL", months = 1, rating = 1 });
-            items.Add(new Model.SkillSet() { name = "Postgres", months = 3, rating = 1 });
-            items.Add(new Model.SkillSet() { name = "PHP", months = 2, rating = 1 });
-            items.Add(new Model.SkillSet() { name = "Haskell", months = 1, rating = 1 });
+            for (int i = 0; i < 3 + rand.Next(3); i++)
+            {
+                items.Add(new Model.SkillSet()
+                {
+                    name = MockSkillSet[rand.Next(MockSkillSet.Length)],
+                    months = 1 + rand.Next(120),
+                    rating = 1 + rand.Next(4)
+                });
+            }
             if (items != null)
             {
                 lvSkillSet.ItemsSource = items;
@@ -60,9 +69,12 @@ namespace ModernUINavigationApp1.Pages
         private void setWorkExperience()
         {
             List<Model.WorkExperience> items = new List<Model.WorkExperience>();
-            items.Add(new Model.WorkExperience() { company = "iSolv Technologies",  position="Team Lead Senior Sofware Engineer", months = 70 });
-            items.Add(new Model.WorkExperience() { company = "Tracker", position="Senior Android Developer", months = 8});
-            items.Add(new Model.WorkExperience() { company = "Tracker", position="Senior Android Developer", months = 7});
+            for (int i = 0; i < 1 + rand.Next(5); i++)
+                items.Add(new Model.WorkExperience() { 
+                    company = MockCompanies[rand.Next(MockCompanies.Length)],
+                    position = MockPosition[rand.Next(MockPosition.Length)],
+                    months = 1+rand.Next(120)
+                });
             if (items != null)
                 lvWorkExperience.ItemsSource = items;
         }
@@ -70,9 +82,9 @@ namespace ModernUINavigationApp1.Pages
         private void setQualifications()
         {
             List<Model.Qualifications> items = new List<Model.Qualifications>();
-            items.Add(new Model.Qualifications() { title = "Bsc Computer Engineer", year = 1998 });
-            items.Add(new Model.Qualifications() { title = "Honor Data Analytics", year = 2002 });
-            items.Add(new Model.Qualifications() { title = "Master Robotics", year = 2004});
+            items.Add(new Model.Qualifications() { title = "degree", year = 1990 + rand.Next(27) });
+            items.Add(new Model.Qualifications() { title = "honour", year = 2002 });
+            items.Add(new Model.Qualifications() { title = "master", year = 2004 });
             if (items != null)
                 lvQualifications.ItemsSource = items;
         }
@@ -105,11 +117,25 @@ namespace ModernUINavigationApp1.Pages
                 button.Content = "+";
             }
         }
-
+        public static List<string[]> MockUserName = new List<string[]>();
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
+            // Mock
+            MockUserName = new List<string[]>();
+            for (int i = 0; i < 50; i++)
+            {
+                string[] a = new string[] { "name - " + i, "user - " + i };
+                MockUserName.Add(a);
+            }
             string applicantName = name.Text;
-            int applicantAge = Convert.ToInt16(age.Text);
+
+            string[] user = MockUserName[rand.Next(MockUserName.Count)];
+
+            applicantName = user[0];
+
+            int applicantAge = 0;
+            int.TryParse(age.Text, out applicantAge);
+
             string applicantPhone = phone.Text;
             string applicantEmail = email.Text;
             string applicantID = id.Text;
@@ -126,9 +152,11 @@ namespace ModernUINavigationApp1.Pages
             cvinfo.qualifications = qualification;
 
             String serializedCVInfo = JsonConvert.SerializeObject(cvinfo);
-            ServiceLayer.RestUsers.updateCV("bob", serializedCVInfo);
-            //String s = jsonString + "ddf";
 
+        
+            ServiceLayer.RestUsers.updateCV(user[1], serializedCVInfo);
+            //String s = jsonString + "ddf";
+            MockIt();
         }
 
         private List<Qualifications> getQualifications()
