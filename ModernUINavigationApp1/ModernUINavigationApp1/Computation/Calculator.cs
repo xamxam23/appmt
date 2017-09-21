@@ -1,4 +1,5 @@
 ﻿using ModernUINavigationApp1.Model;
+using ModernUINavigationApp1.Pages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,21 +10,21 @@ namespace ModernUINavigationApp1.Computation
 {
     class Calculator
     {
-        private readonly int WORK_EXPERIENCE_POINTS = 2;
-        private readonly int WANTED_SKILLS = 2;
-        private readonly int OTHER_SKILLS = 1;
-        private readonly Dictionary<string, double> QUALIFICATION_POINTS = new Dictionary<string, double>
+        private static readonly int WORK_EXPERIENCE_POINTS = 2;
+        private static readonly int WANTED_SKILLS = 2;
+        private static readonly int OTHER_SKILLS = 1;
+        private static readonly Dictionary<string, double> QUALIFICATION_POINTS = new Dictionary<string, double>
         {
             { "matric", .25 },
             { "certificate", .5 },
             { "diploma", 1 },
-            { "bsc", 4 },
+            { "degree", 4 },
             { "honours", 5 },
             { "masters", 7 },
             { "phd", 10 },
         };
 
-        public int calculateWorkExperience(List<WorkExperience> workExperience)
+        public static int calculateWorkExperience(List<WorkExperience> workExperience)
         {
             int results = 0;
 
@@ -35,7 +36,7 @@ namespace ModernUINavigationApp1.Computation
             return results;
         }
 
-        public int calculateSkillSet(List<SkillSet> skillSet, List<SkillSet> wantedSkillSet)
+        public static int calculateSkillSet(List<SkillSet> skillSet, List<Criterion> wantedSkillSet)
         {
             int results = 0;
 
@@ -43,7 +44,7 @@ namespace ModernUINavigationApp1.Computation
             {
                 for (int i = 0; i < wantedSkillSet.Count; i++)
                 {
-                    if (skill.skillName.Equals(wantedSkillSet[i]) && (i == (wantedSkillSet.Count - 1)))
+                    if (skill.skillName.Equals(wantedSkillSet[i].minQualifications))
                     {
                         results = results + WANTED_SKILLS;
                         break;
@@ -61,9 +62,14 @@ namespace ModernUINavigationApp1.Computation
             return results;
         }
 
-        public double calculateWorkQualifications(Qualifications qualification)
+        public static double calculateWorkQualifications(List<Qualifications> qualifications)
         {
-            return QUALIFICATION_POINTS[qualification.title.ToLower()];
+            double results = 0;
+            foreach (Qualifications qualification in qualifications)
+            {
+                results = results + QUALIFICATION_POINTS[qualification.title.ToLower()];
+            }
+            return results;
         }
     }
 }

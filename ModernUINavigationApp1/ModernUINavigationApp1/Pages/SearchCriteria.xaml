@@ -24,10 +24,11 @@
                     <TextBox Name="Text_Years" Width="40" Margin="4,4,16,4"/>
                     <TextBlock Text="Qualification" VerticalAlignment="Center" Margin="4,4,2,4"/>
                     <ComboBox Width="125" Name="ComboBox_Qualifications" >
-                        <ComboBoxItem  Name="hsc">HighSchool</ComboBoxItem>
-                        <ComboBoxItem  Name="cert">Certification</ComboBoxItem>
+                        <ComboBoxItem  Name="hsc">Matric</ComboBoxItem>
+                        <ComboBoxItem  Name="cert">Certificate</ComboBoxItem>
                         <ComboBoxItem  Name="dip">Diploma</ComboBoxItem>
                         <ComboBoxItem  Name="deg">Degree</ComboBoxItem>
+                        <ComboBoxItem  Name="hon">Honours</ComboBoxItem>
                         <ComboBoxItem  Name="msc">Master</ComboBoxItem>
                         <ComboBoxItem  Name="ph">PhD</ComboBoxItem>
                     </ComboBox>

@@ -1,4 +1,8 @@
-﻿using System;
+﻿using ModernUINavigationApp1.Computation;
+using ModernUINavigationApp1.Model;
+using Newtonsoft.Json;
+using ServiceLayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -81,7 +85,72 @@ namespace ModernUINavigationApp1.Pages
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            List<Criterion> preferedSkillSet = getPreferredCriterion();
+            List<CVInfo> candidates = getRegisteredApplicants();
+            getScoredCVs(candidates, preferedSkillSet);
             SearchPotentialCandidates();
+        }
+
+        private List<CVScored> getScoredCVs(List<CVInfo> candidates, List<Criterion> preferedSkillSet)
+        {
+            List<CVScored> results = new List<CVScored>();
+            CVScored scoredCV;
+            foreach(CVInfo cvInfo in candidates)
+            {
+                scoredCV = new CVScored();
+
+                int workExperienceScore = Calculator.calculateWorkExperience(cvInfo.workExperience);
+                int skillSetScore = Calculator.calculateSkillSet(cvInfo.skillSet, preferedSkillSet);
+                double qualificationScore = Calculator.calculateWorkQualifications(cvInfo.qualifications);
+
+                scoredCV.workScore = workExperienceScore;
+                scoredCV.skillScore = skillSetScore;
+                scoredCV.qualificationScore = qualificationScore;
+
+                results.Add(scoredCV);
+            }
+
+            return results;
+
+        }
+
+        private List<Criterion> getPreferredCriterion()
+        {
+            List<Criterion> results = new List<Criterion>();
+
+            if (ListView_Criteria.Items.Count == 0)
+            {
+                return results;
+            }
+
+            foreach (Criterion criteria in ListView_Criteria.Items)
+            {
+                results.Add(criteria);
+            }
+
+            return results;
+        }
+
+        private List<CVInfo> getRegisteredApplicants()
+        {
+            GetUsersResponse usersResponse = ServiceLayer.RestUsers.getUsers();
+            List<User> usersData = usersResponse.data;
+            List<CVInfo> cvList = new List<CVInfo>();
+
+            foreach (User user in usersData)
+            {
+                try
+                {
+                    cvList.Add(JsonConvert.DeserializeObject<CVInfo>(user.cv));
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.ToString());
+                }
+            }
+
+            return cvList;
+
         }
 
         void SearchPotentialCandidates()

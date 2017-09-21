@@ -108,9 +108,6 @@ namespace ModernUINavigationApp1.Pages
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            GetUsersResponse usersResponse = ServiceLayer.RestUsers.getUsers();
-            List<User> users = usersResponse.data;
-
             string applicantName = name.Text;
             int applicantAge = Convert.ToInt16(age.Text);
             string applicantPhone = phone.Text;
