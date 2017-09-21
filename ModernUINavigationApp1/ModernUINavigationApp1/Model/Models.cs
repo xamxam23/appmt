@@ -16,15 +16,34 @@ namespace ModernUINavigationApp1.Model
         public double workScore { get; set; }
         public double skillScore { get; set; }
 
-        public string qualificationScoreString
+        public double qualificationScoreString
         {
             get
             {
-                return qualificationScore.ToString("#.##");
+                return parse(qualificationScore.ToString("#.##"));
             }
         }
-        public string workScoreString { get { return workScore.ToString("#.##"); } }
-        public string skillScoreString { get { return skillScore.ToString("#.##"); } }
+        public double workScoreString
+        {
+            get
+            {
+                return parse(workScore.ToString("#.##"));
+            }
+        }
+        public double skillScoreString
+        {
+            get
+            {
+                return parse(skillScore.ToString("#.##"));
+            }
+        }
+
+        public double parse(string s)
+        {
+            double d = 0;
+            double.TryParse(s, out d);
+            return d;
+        }
 
         public double totalScore
         {
@@ -229,6 +248,7 @@ namespace ModernUINavigationApp1.Model
         private string qualificationsTitle;
         private string qualificationsInstitution;
         private int qualificationsYear;
+        private double value;
 
         public string title
         {

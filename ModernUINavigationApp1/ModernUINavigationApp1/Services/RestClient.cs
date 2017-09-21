@@ -55,8 +55,10 @@ namespace ServiceLayer
                     rs = Encoding.Default.GetString(r);
                 }
             }
-            catch (Exception e) { Console.WriteLine(e.Message); }
-            Console.WriteLine(rs);
+            catch (Exception e) {
+               // Console.WriteLine(e.Message); 
+            }
+            // Console.WriteLine(rs);
             return rs;
         }
 
@@ -65,14 +67,14 @@ namespace ServiceLayer
             try
             {
                 string rs = RestClient.post(cmd, data);
-                Console.WriteLine(rs);
+                //Console.WriteLine(rs);
                 T r = JsonConvert.DeserializeObject<T>(rs);
-                Console.WriteLine(r);
+                //Console.WriteLine(r);
                 return r;
             }
             catch (JsonException e)
             {
-                Console.WriteLine(e);
+                //Console.WriteLine(e);
             }
             return default(T);
         }

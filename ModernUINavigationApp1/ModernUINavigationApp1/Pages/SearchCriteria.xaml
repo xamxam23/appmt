@@ -55,17 +55,16 @@
             </StackPanel>
         </ScrollViewer>
         <ScrollViewer Name="ScrollViewer_ResultContainer" Visibility="Collapsed">
-            <StackPanel MinWidth="200">
+            <StackPanel MinWidth="300">
                 <Grid>
                     <TextBlock Text="Search Results" Style="{StaticResource Heading2}" />
                     <Button Content="Back"  HorizontalAlignment="Right" Click="BackToSearCriteria"/>
                 </Grid>
                 <TextBox Text=""  Margin="4,4,4,4" Name="TextBox_SearchKey" Visibility="Collapsed" />
-                <DataGrid  MinHeight="200"
-                           
+                <DataGrid  
                            LoadingRow="DataGrid_LoadingRow"
                                     RowBackground="Beige"   Background="Beige" 
-                                    IsReadOnly="True" ColumnWidth="*"  Grid.Row="1" GridLinesVisibility="None"
+                                    IsReadOnly="True" ColumnWidth="*"  Grid.Row="1" GridLinesVisibility="All"
                                     VerticalScrollBarVisibility="Visible" 
                                     AutoGenerateColumns="False"  Name="dataGridUsers" >
 

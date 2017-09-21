@@ -24,19 +24,6 @@ namespace ModernUINavigationApp1
         public MainWindow()
         {
             InitializeComponent();
-            Task.Factory.StartNew((Action)(() =>
-            {
-                ServiceLayer.GetUsersResponse response = ServiceLayer.RestUsers.getUsers();
-                if (response != null)
-                    Dispatcher.BeginInvoke((Action)(() =>
-                    {
-                        if (response.data!=null)
-                            foreach (ServiceLayer.User user in response.data)
-                            {
-                                Console.WriteLine(user);
-                            }
-                    }));
-            }));
         }
     }
 }

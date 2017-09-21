@@ -72,14 +72,8 @@ namespace ModernUINavigationApp1.Computation
             double results = 0;
             foreach (Qualifications qualification in qualifications)
             {
-                try
-                {
+                    if (QUALIFICATION_POINTS.ContainsKey(qualification.title.ToLower()))
                     results = results + QUALIFICATION_POINTS[qualification.title.ToLower()];
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e);
-                }
             }
             return results;
         }

@@ -88,6 +88,7 @@ namespace ModernUINavigationApp1.Pages
             List<Criterion> preferedSkillSet = getPreferredCriterion();
             List<CVInfo> candidates = getRegisteredApplicants();
             ShowPotentialCandidates(getScoredCVs(candidates, preferedSkillSet));
+            ///ShowPotentialCandidates(createTestData());
         }
 
         private List<CVScored> getScoredCVs(List<CVInfo> candidates, List<Criterion> preferedSkillSet)
@@ -124,17 +125,8 @@ namespace ModernUINavigationApp1.Pages
         private List<Criterion> getPreferredCriterion()
         {
             List<Criterion> results = new List<Criterion>();
-
-            if (ListView_Criteria.Items.Count == 0)
-            {
-                return results;
-            }
-
             foreach (Criterion criteria in ListView_Criteria.Items)
-            {
                 results.Add(criteria);
-            }
-
             return results;
         }
 

@@ -66,7 +66,7 @@ namespace ServiceLayer
             }
             catch (JsonException e)
             {
-                Console.WriteLine(e);
+                //Console.WriteLine(e);
             }
             return null;
         }
